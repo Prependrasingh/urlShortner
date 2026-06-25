@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Knot — make links shorter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site-header">
+  <div class="wordmark">
+    <svg class="knot-icon" viewBox="0 0 32 32" width="22" height="22" aria-hidden="true">
+      <path d="M10 16c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6c-1.8 0-3.4-.8-4.5-2M22 16c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c1.8 0 3.4.8 4.5 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    Knot
+  </div>
+  <a class="header-link" href="#archive">Your links</a>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="eyebrow">paste a long one, tie it short</p>
+    <h1>Every long&nbsp;link<br>has a <em>shorter</em> name.</h1>
+
+    <form id="shorten-form" class="shorten-form" autocomplete="off">
+      <div class="input-row">
+        <span class="input-glyph">⛓</span>
+        <input
+          type="url"
+          id="long-url"
+          name="longUrl"
+          placeholder="https://example.com/a/very/long/path?that=goes&on=forever"
+          required
+        />
+        <button type="submit" id="submit-btn">
+          <span class="btn-label">Tie it</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p class="form-hint" id="form-hint">&nbsp;</p>
+    </form>
+
+    <div class="result" id="result" hidden>
+      <div class="result-row">
+        <div class="result-knot" aria-hidden="true">⛓</div>
+        <div class="result-text">
+          <span class="result-label">your short link</span>
+          <a id="result-link" class="result-url" href="#" target="_blank" rel="noopener"></a>
+        </div>
+        <button id="copy-btn" class="copy-btn" type="button">
+          <span class="copy-label">Copy</span>
+        </button>
+      </div>
+      <p class="result-original" id="result-original"></p>
+    </div>
+  </section>
+
+  <section class="archive" id="archive">
+    <div class="archive-head">
+      <h2>Your links</h2>
+      <span class="archive-count" id="archive-count">0 tied</span>
+    </div>
+
+    <div id="archive-empty" class="archive-empty">
+      <p>Nothing tied yet — your shortened links will collect here.</p>
+    </div>
+
+    <ul id="archive-list" class="archive-list" hidden></ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Knot keeps your links coiled, tidy, and easy to carry.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
