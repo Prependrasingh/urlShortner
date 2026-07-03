@@ -1,6 +1,6 @@
 // ── CONFIG ─────────────────────────────────────────────
 // Update this to match your backend's base URL once deployed
-const API_BASE = 'http://localhost:3000';
+const API_BASE = 'https://urlshortner-sqqz.onrender.com';
 
 // ── ELEMENTS ───────────────────────────────────────────
 const form        = document.getElementById('shorten-form');
